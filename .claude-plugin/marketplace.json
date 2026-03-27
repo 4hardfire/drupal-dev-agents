@@ -10,7 +10,7 @@
   "plugins": [
     {
       "name": "drupal-dev-agents",
-      "source": ".",
+      "source": "./",
       "description": "Complete Drupal 10-11+ development toolkit with 17 specialized skills, 4 agents, and 4 slash commands",
       "version": "1.0.0",
       "category": "development",
