@@ -532,6 +532,5 @@ For code generation (creating modules, plugins, forms, services, etc.), see the 
 
 - **drush-generate** — Code scaffolding with `ddev drush gen`
 - **ddev-setup** — DDEV project setup and environment management
-- **drupal-config** — Configuration API and config management workflows
-- **drupal-database** — Database API, schema, and update hooks
-- **drupal-queue** — Queue API and QueueWorker plugins
+- **drupal-patterns** — Decision framework for choosing Drupal patterns
+

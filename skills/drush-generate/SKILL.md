@@ -395,11 +395,4 @@ ddev drush gen yml:module:links:action --answers='{"module":"my_module"}'
 
 ## Related Skills
 
-- **drupal-plugins** -- Detailed patterns for Block, FieldType, FieldWidget, FieldFormatter, Action, QueueWorker, and Condition plugins.
-- **drupal-services** -- Service definitions, dependency injection, and `services.yml` structure.
-- **drupal-forms** -- FormBase, ConfigFormBase, form elements, validation, and submission handlers.
-- **drupal-routing** -- Route definitions, route parameters, access control, and controllers.
-- **drupal-hooks** -- Hook implementations, OOP hooks in Drupal 11+, and hook ordering.
-- **drupal-events** -- Event subscribers and custom event dispatching.
-- **drupal-entities** -- Content and config entity types, base fields, and entity API.
-- **drupal-testing** -- PHPUnit test types (Unit, Kernel, Functional, FunctionalJavascript).
+- **drupal-patterns** -- Decision framework for choosing which Drupal pattern to use.

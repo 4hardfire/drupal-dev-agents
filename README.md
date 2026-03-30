@@ -1,6 +1,6 @@
 # Drupal Dev Agents
 
-A comprehensive Claude Code plugin for Drupal 10/11+ development. Provides 17 specialized skills, 4 intelligent agents, and 4 slash commands covering the entire Drupal development workflow.
+A Claude Code plugin for Drupal 10/11+ development. Provides 4 focused skills, 4 intelligent agents, and 4 slash commands with a **drush-generate-first workflow** — all boilerplate is scaffolded with `ddev drush gen`, then custom logic is implemented on top.
 
 ## Installation
 
@@ -25,31 +25,21 @@ Then install the plugin:
 /plugin install drupal-dev-agents@drupal-dev-agents
 ```
 
-## Skills (17)
+## Philosophy
 
-### Drupal API Skills
+**Drush generate first, custom logic second.**
+
+1. All boilerplate code is generated using `ddev drush gen` (modules, entities, plugins, forms, controllers, services, event subscribers, hooks, tests)
+2. Custom logic is implemented on top of the generated scaffold
+3. Only when drush has no generator for a component is the boilerplate written manually — still following Drupal/PHP standards
+
+## Skills (4)
+
 | Skill | Description |
 |-------|-------------|
-| **drupal-plugins** | Plugin system — Block, Field, Action, QueueWorker, Condition (D10 annotations + D11+ attributes) |
-| **drupal-entities** | Content entities and config entities — base fields, handlers, forms, list builders |
-| **drupal-forms** | Forms API — ConfigFormBase, FormBase, multi-step, AJAX forms |
-| **drupal-services** | Services and DI — service definitions, constructor injection, tagged services, decorators |
-| **drupal-events** | Event system — subscribers, custom events, kernel/entity/config events |
-| **drupal-hooks** | Hooks — legacy procedural AND Drupal 11+ OOP hooks with `#[Hook]` attribute |
-| **drupal-routing** | Routing — YAML routes, controllers, route subscribers, parameter upcasting |
-| **drupal-database** | Database — schema, update hooks, post_update, Database API queries |
-| **drupal-render** | Render system — render arrays, elements, hook_theme(), Twig, lazy builders |
-| **drupal-access** | Access control — permissions, access checkers, entity access handlers |
-| **drupal-queue** | Queue API — QueueWorker plugins, cron processing, batch operations |
-| **drupal-cache** | Cache API — tags, contexts, max-age, bins, invalidation |
-| **drupal-config** | Configuration — simple config, config entities, schema, overrides |
-| **drupal-testing** | Testing — Unit, Kernel, Functional, Browser tests with PHPUnit |
-
-### Tooling Skills
-| Skill | Description |
-|-------|-------------|
-| **drush-commands** | All operational Drush commands — cache, config, deploy, database, user, cron, watchdog, queues, maintenance mode |
-| **drush-generate** | All `drush gen` commands with options and non-interactive usage |
+| **drupal-patterns** | Decision framework — when to use content entity vs config entity vs plugin vs service vs event vs hook vs queue |
+| **drush-generate** | All `ddev drush gen` commands with options and non-interactive `--answers` JSON usage |
+| **drush-commands** | Operational Drush commands — cache, config, deploy, database, user, cron, watchdog, queues |
 | **ddev-setup** | DDEV project setup, configuration, services, xdebug |
 
 ## Agents (4)
@@ -59,14 +49,14 @@ Then install the plugin:
 | **module-learner** | Analyzes any contrib/core module and generates a skill from its API |
 | **drupal-code-explorer** | Drupal-aware codebase exploration |
 | **drupal-code-reviewer** | Drupal coding standards, security, and performance review |
-| **drupal-architect** | Module architecture design and decision-making |
+| **drupal-architect** | Module architecture design with drush generator mapping |
 
 ## Commands (4)
 
 | Command | Usage | Description |
 |---------|-------|-------------|
 | `/learn-module` | `/learn-module paragraphs` | Analyze a module and generate a skill reference |
-| `/drupal-feature` | `/drupal-feature "donation tracker"` | Guided feature development workflow |
+| `/drupal-feature` | `/drupal-feature "donation tracker"` | Guided feature development workflow (drush-first) |
 | `/ddev-init` | `/ddev-init 11` | Interactive DDEV + Drupal setup |
 | `/drush-gen` | `/drush-gen plugin:block` | Guided drush code generation |
 

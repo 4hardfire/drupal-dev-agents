@@ -186,17 +186,35 @@ Permissions:
 | Kernel | {class} | {entity CRUD, service integration} |
 | Functional | {class} | {admin UI, form submission, access} |
 
+### Drush Generators to Use
+{Map each component to its `ddev drush gen` command. Only list components that have a matching generator.}
+
+| Component | Generator Command |
+|-----------|------------------|
+| Module scaffold | `ddev drush gen module` |
+| {Entity type} | `ddev drush gen entity:content` or `entity:config` |
+| {Service} | `ddev drush gen service` |
+| {Plugin} | `ddev drush gen plugin:{type}` |
+| {Form} | `ddev drush gen form:config` or `form:simple` |
+| {Controller} | `ddev drush gen controller` |
+| {Event subscriber} | `ddev drush gen event-subscriber` |
+| {Hook} | `ddev drush gen hook` |
+| {Tests} | `ddev drush gen test` |
+
+### Components Without a Generator
+{List any components that must be written manually because no drush generator exists (e.g., custom plugin types, Twig templates, preprocess functions, library definitions, batch operations, custom event classes, config schema, default config YAML). These must still follow Drupal and PHP coding standards.}
+
 ### Implementation Order
-1. Module scaffold (.info.yml, .module)
-2. Configuration (schema, defaults, settings form)
-3. Entity types (if any)
-4. Services (business logic)
-5. Plugins (blocks, fields, etc.)
-6. Routes and controllers
-7. Event subscribers / hooks
-8. Permissions and access
-9. Templates and theming
-10. Tests
+1. Generate module scaffold with `ddev drush gen module`
+2. Generate entities with `ddev drush gen entity:content` / `entity:config`
+3. Generate services with `ddev drush gen service`
+4. Generate plugins with `ddev drush gen plugin:{type}`
+5. Generate forms with `ddev drush gen form:config` / `form:simple`
+6. Generate controllers with `ddev drush gen controller`
+7. Generate event subscribers / hooks with `ddev drush gen event-subscriber` / `hook`
+8. Generate tests with `ddev drush gen test`
+9. Run `ddev drush cr` to clear cache
+10. Implement custom logic on top of the generated boilerplate (base fields, service methods, plugin logic, form elements, access checks, config schema, default config, templates, libraries)
 ```
 
 ## Process
@@ -209,6 +227,7 @@ Permissions:
 
 ## Important Notes
 
+- **Always use `ddev drush gen` for boilerplate** — map every component in the architecture to its drush generator. Only design manual code for components that have no generator (custom plugin types, Twig templates, preprocess functions, library definitions, batch operations, custom event classes, config schema, default config YAML).
 - Always check for existing contrib modules that solve part of the problem
 - Prefer composition (services + DI) over inheritance
 - Design for extensibility: use events/hooks so other modules can customize

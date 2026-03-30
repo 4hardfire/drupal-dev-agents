@@ -298,8 +298,6 @@ Common issues and solutions:
 
 ## Related Skills
 
-- **drupal-install** -- Full Drupal installation and site configuration
 - **drush-commands** -- Comprehensive Drush command reference
-- **composer-management** -- Composer dependency management for Drupal
-- **drupal-config** -- Drupal configuration management (CMI)
-- **drupal-performance** -- Performance tuning including caching services
+- **drush-generate** -- Code scaffolding with `ddev drush gen`
+- **drupal-patterns** -- Decision framework for choosing Drupal patterns

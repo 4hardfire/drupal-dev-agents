@@ -4,14 +4,14 @@
     "name": "Bernardo Paulino"
   },
   "metadata": {
-    "description": "Comprehensive Drupal development agents and skills for Claude Code — plugins, entities, forms, services, events, hooks, testing, drush generation, DDEV setup, and a module learner agent",
+    "description": "Drupal development agents and skills for Claude Code — drush-generate-first workflow, pattern selection, customization patterns, drush commands, DDEV setup, and a module learner agent",
     "version": "1.0.0"
   },
   "plugins": [
     {
       "name": "drupal-dev-agents",
       "source": "./",
-      "description": "Complete Drupal 10-11+ development toolkit with 17 specialized skills, 4 agents, and 4 slash commands",
+      "description": "Drupal 10-11+ development toolkit with 4 focused skills, 4 agents, and 4 slash commands — drush-generate-first workflow",
       "version": "1.0.0",
       "category": "development",
       "keywords": ["drupal", "php", "symfony", "ddev", "drush", "drupal-11", "module-development"],
